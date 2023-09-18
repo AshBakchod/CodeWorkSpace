@@ -19,8 +19,11 @@ class Rectangle{
 };
 int main() {
     // Write C++ code here
+    int l,b;
+    cout<<"Enter the dimension of Rectangle "<<endl;
+    cin>>l>>b;
    Rectangle r1;
-   Rectangle r2(10,20);
+   Rectangle r2(l,b);
    r1.area();
    r2.area();
    return 0;
