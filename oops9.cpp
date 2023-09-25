@@ -1,40 +1,42 @@
 #include<iostream>
+using namespace std;
+class A; // Forward declaration
 
-class ClassA; // Forward declaration
-
-class ClassB {
-private:
+class B {
     int valueB;
 public:
-    ClassB(int val) : valueB(val) {}
+    B(int val){
+        valueB=val;
+    }
 
-    friend void compareValues(ClassA, ClassB);
+    friend void compareValues(A,B);
 };
 
-class ClassA {
-private:
+class A {
     int valueA;
 public:
-    ClassA(int val) : valueA(val) {}
+    A(int val){
+        valueA=val;
+    }
 
-    friend void compareValues(ClassA, ClassB);
+    friend void compareValues(A,B);
 };
 
-void compareValues(ClassA objA, ClassB objB) {
-    if (objA.valueA > objB.valueB) {
-        std::cout << "ClassA has the greatest value." << std::endl;
+void compareValues(A a, B b) {
+    if (a.valueA > b.valueB) {
+    cout << "Class A has the greatest value." <<endl;
     }
-    else if (objA.valueA < objB.valueB) {
-        std::cout << "ClassB has the greatest value." << std::endl;
+    else if (a.valueA < b.valueB) {
+    cout << "Class B has the greatest value." <<endl;
     }
     else {
-        std::cout << "Both classes have the same value." << std::endl;
+    cout << "Both classes have the same value." <<endl;
     }
 }
 
 int main() {
-    ClassA objA(5);
-    ClassB objB(7);
+    A objA(5);
+    B objB(7);
 
     compareValues(objA, objB);
 
