@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
- int byvalue(int a ,int b);
 
 int byvalue(int a,int b)
 {
@@ -15,18 +14,18 @@ int byreference(int &c,int &d)
     return sol;
 
 }
-int  bypointer(int &e,int &f)
+int  bypointer(int*e,int *f)
 {
     int sol;
-    sol = e + f;
+    sol = *e + *f;
     return sol;
 }
 int main()
 { int ans,cal,sol;
 int c = 20;
 int d = 30;
-int e = 20;
-int f = 30;
+int*e = &c;
+int*f = &d;
     
     cout<<"call by value : "<<endl;
     ans = byvalue(30,20);
