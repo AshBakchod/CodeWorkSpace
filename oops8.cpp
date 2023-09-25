@@ -27,16 +27,10 @@ int d = 30;
 int*e = &c;
 int*f = &d;
     
-    cout<<"call by value : "<<endl;
-    ans = byvalue(30,20);
-    cout<<" "<<ans;
-    cout<<"\ncall by reference : "<<endl;
-    cal = byreference(c,d);
-    cout<<" "<<cal;
-    cout<<"\ncall by pointer : "<<endl;
-    sol = bypointer(e,f);
-    cout<<" "<<sol;
-
-
+    cout<<"Call by value : "<< byvalue(30,20)<<endl;
+    
+    cout<<"Call by reference : "<<byreference(c,d)<<endl;
+    
+    cout<<"Call by pointer : "<<bypointer(e,f)<<endl;
     
 }
