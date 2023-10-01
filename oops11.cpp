@@ -17,12 +17,19 @@ class complex{
         input>>c.real>>c.img;
         return input;
     }
+  void operator=(const complex& C)
+    {
+        real = C.real;
+        img = C.img;
+    }
 };
 int main(){
-    complex c1(20,30),c2;
+    complex c1(20,30),c2,c3;
     cout<<"Enter Real and Imaginary data of complex :"<<endl;
     cin>>c2;
+    c3=c1;
     cout<<"The First Complex Number is "<<c1;
     cout<<"The Second Complex Number is "<<c2;
+    cout<<"The Third Complex Number is "<<c3;
     return 0;
 }
