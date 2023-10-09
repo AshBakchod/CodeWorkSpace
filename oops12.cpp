@@ -1,7 +1,7 @@
 #include<iostream>
 #include<stdlib.h>
-
 using namespace std;
+
 void * operator new(size_t size)
 {
 	cout << "New operator overloading " << endl;
