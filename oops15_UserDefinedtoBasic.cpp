@@ -1,22 +1,19 @@
 #include <iostream>
 using namespace std;
-class Integer {
+class MyType {
+private:
     int value;
+
 public:
-    Integer(int data){
-        value=data;
+    MyType(int val) : value(val) {}
+    operator int() {
+        return value;
     }
-    friend int convert(Integer &i);
 };
-    int convert(Integer &i){
-        return i.value;
-    }
 
 int main() {
-    Integer obj(42);
-    int myInt;
-
-    myInt = convert(obj);
-    cout<<"The Value of My Integer is : "<<myInt<<endl;
+    MyType myObj(42);
+    int intValue = myObj;
+    cout << "Converted integer value: " << intValue <<endl;
     return 0;
 }
