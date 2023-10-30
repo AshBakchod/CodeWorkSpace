@@ -7,7 +7,7 @@ class Student{
   protected:
   string name;
   int roll;
-  virtual void set(string n , int r){
+  void set(string n , int r){
       name=n;
       roll=r;
       cout<<"Name : "<<name<<endl;
@@ -15,9 +15,8 @@ class Student{
   }
 };
 class SubMarks : virtual public Student{
-  protected:
-  int Submarks;
-   SubMarks(){
+    protected:
+  int getSubMarks(){
       cout<<"Enter the marks in 5 subjects out of 100 "<<endl;
       int temp = 0;
       int marks=0;
@@ -25,15 +24,16 @@ class SubMarks : virtual public Student{
           cin>>temp;
           marks+=temp;
       }
-      Submarks=marks;
+      return marks;
   }
 };
 class SportsMarks : virtual public Student{
   protected:
-  int Sportmarks;
-  SportsMarks(){
+  int getSportsMarks(){
+      int marks=0;
       cout<<"Enter the marks in Sports out of 100 "<<endl;
-      cin>>Sportmarks;
+      cin>>marks;
+      return marks;
   }
 };
 class Result : public SportsMarks , public SubMarks{
@@ -47,10 +47,11 @@ class Result : public SportsMarks , public SubMarks{
         set(n,r);
     }
     void display(){
-        int sub = this->Submarks;
-        int spo = this->Sportmarks;
+        int sub = getSubMarks();
+        int spo = getSportsMarks();
+        string n = this->name;
         percent = (sub+spo)/6;
-        cout<<"The Percentage of the Student is : "<<percent<<endl;
+        cout<<"The Percentage of "<<name<<" is : "<<percent<<endl;
     }
 };
 int main() {
