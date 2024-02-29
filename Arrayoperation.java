@@ -1,3 +1,4 @@
+//To Perfom Searching and Sorting using an 1-D Array
 import java.util.Scanner;
 class Arrayoperation
 {
@@ -16,6 +17,11 @@ class Arrayoperation
                 }
             }
         }
+        System.out.print("The Sorted Array is : [");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("]");
     }
     int searching(int[] arr , int target)
     {
@@ -46,7 +52,7 @@ class Arrayoperation
             arr[i]=s.nextInt();
         }
         a.sorting(arr);
-        System.out.println("The Array has been sorted");
+        //System.out.println("The Array has been sorted");
         System.out.print("Enter the number to be searched : ");
         int target = s.nextInt();
         System.out.println(a.searching(arr,target));
